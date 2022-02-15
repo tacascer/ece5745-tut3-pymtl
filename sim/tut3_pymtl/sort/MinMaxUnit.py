@@ -23,3 +23,12 @@ class MinMaxUnit( Component ):
     # unit test from scratch named MinMaxUnit_test.py.
     # ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+    @update
+    def block():
+      if s.in0 >= s.in1:
+        s.out_max @= s.in0
+        s.out_min @= s.in1
+      else:
+        s.out_max @= s.in1
+        s.out_min @= s.in0
+

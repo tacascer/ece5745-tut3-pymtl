@@ -20,9 +20,12 @@ input_values.extend( [0]*3 )
 # insert code here for constructing and elaborating a RegIncr model
 # before using the SimulationTool to create a simulator.
 # ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+model = RegIncr()
+model.elaborate()
+
 # Create a simulator by applying the default pass group
 
-model.apply( DefaultPassGroup(textwave=True) )
+model.apply( DefaultPassGroup(textwave=True, vcdwave = 'regincr-sim') )
 
 # Reset simulator
 
@@ -43,7 +46,7 @@ for input_value in input_values:
   # replace this with a call to the simulator's print_line_trace method.
   # ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-  print( f" cycle = {model.sim_cycle_count()}: in = {model.in_}, out = {model.out}" )
+  # print( f" cycle = {model.sim_cycle_count()}: in = {model.in_}, out = {model.out}" )
 
   # Tick simulator one cycle
 

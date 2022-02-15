@@ -29,7 +29,8 @@ class RegIncrNstage( Component ):
     # This model is incomplete. As part of the tutorial you will insert
     # code here to connect the stages together.
     # ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
+    for i in range(nstages - 1):
+      s.reg_incrs[i].out //= s.reg_incrs[i+1].in_
     # Connect last reg_incr in chain to output port
 
     s.out //= s.reg_incrs[-1].out

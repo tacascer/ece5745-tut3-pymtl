@@ -36,3 +36,9 @@ class RegIncr( Component ):
     # output the input, register, and output values.
     # ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+    @update
+    def block2():
+      s.out @= s.reg_out + 1
+
+  def line_trace( s ):
+    return f"{s.in_} ({s.reg_out}) {s.out}"
